@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         //中斷Beacon掃描
         //Here input your ID處輸入識別地區的ID(前方建立的BeaconRegion的ID)
-        beaconManager.stopMonitoring("Beacon Tag Id");
+        beaconManager.stopMonitoring("Here input your ID");
         //中斷Beacon連結
         beaconManager.disconnect();
     }
