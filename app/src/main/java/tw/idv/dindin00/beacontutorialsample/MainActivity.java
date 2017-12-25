@@ -113,4 +113,14 @@ public class MainActivity extends AppCompatActivity {
         //動態要求並打開定位及藍芽權限
         SystemRequirementsChecker.checkWithDefaultDialogs(this);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //中斷Beacon掃描
+        //Here input your ID處輸入識別地區的ID(前方建立的BeaconRegion的ID)
+        beaconManager.stopMonitoring("Beacon Tag Id");
+        //中斷Beacon連結
+        beaconManager.disconnect();
+    }
 }
